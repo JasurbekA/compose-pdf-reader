@@ -1,6 +1,9 @@
 name: Android UI Tests
 
-on: pull_request
+on:
+  schedule:
+    # Every day at 2am
+    - cron: '0 2 * * *'
 
 jobs:
   android-test:
