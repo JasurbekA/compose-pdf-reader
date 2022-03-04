@@ -1,4 +1,4 @@
-package com.template
+package com.pdf
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

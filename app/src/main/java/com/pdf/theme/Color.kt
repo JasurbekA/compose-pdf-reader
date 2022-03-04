@@ -1,6 +1,6 @@
 @file:Suppress("MagicNumber")
 
-package com.template.theme
+package com.pdf.theme
 
 import androidx.compose.ui.graphics.Color
 

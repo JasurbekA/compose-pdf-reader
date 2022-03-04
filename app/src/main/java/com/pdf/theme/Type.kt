@@ -1,4 +1,4 @@
-package com.template.theme
+package com.pdf.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
