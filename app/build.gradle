@@ -3,6 +3,8 @@ plugins {
     id "kotlin-android"
 }
 
+apply from: "../buildscripts/jacoco.gradle"
+
 android {
     compileSdk 31
 
@@ -23,6 +25,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+        debug {
+            testCoverageEnabled true
         }
     }
     compileOptions {
