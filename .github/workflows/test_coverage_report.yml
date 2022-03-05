@@ -51,12 +51,10 @@ jobs:
         with:
           coverage-label: "Total Coverage"
           jacoco-csv-file: jacoco-report.csv
-    #          generate-branches-badge: true
 
         - name: Log coverage percentage
           run: |
             echo "coverage = ${{ steps.jacoco-badge.outputs.coverage }}"
-    #          echo "branches = ${{ steps.jacoco-badge.outputs.branches }}"
 
         - name: Commit and push the badge (if it changed)
           uses: EndBug/add-and-commit@v7
