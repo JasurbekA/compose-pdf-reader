@@ -1,1 +1,2 @@
-## This project is under development
+## This project is under developmen
+TODO Optimize Readme 
