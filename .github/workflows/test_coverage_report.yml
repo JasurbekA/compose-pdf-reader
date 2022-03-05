@@ -4,6 +4,9 @@ on:
   pull_request:
     branches:
       - master
+  push:
+    branches:
+      - master
   schedule:
     # Every day at 2am
     - cron: '0 2 * * *'
