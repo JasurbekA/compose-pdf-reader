@@ -40,7 +40,6 @@ jobs:
     name: JaCoCo Badge Generator
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout and Downlaod file
       - uses: actions/checkout@v2
       - uses: actions/download-artifact@v2
         with:
