@@ -36,20 +36,23 @@ jobs:
           name: jacoco-report.csv
           path: reports/jacoco/test/combinedJacocoTestReport.csv
 
-  generate-report-badge:
+  report-badge:
     name: JaCoCo Badge Generator
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
+      - name: Checkout out the repo
+        uses: actions/checkout@v2
+      - name: Download the file
+        uses: actions/download-artifact@v2
         with:
           name: jacoco-report.csv
+          path: reports/jacoco/test/combinedJacocoTestReport.csv
       - name: Generate JaCoCo Badge
         id: jacoco-badge
         uses: cicirello/jacoco-badge-generator@v2.6.1
         with:
           coverage-label: "Total Coverage"
-          jacoco-csv-file: jacoco-report.csv
+          jacoco-csv-file: reports/jacoco/test/combinedJacocoTestReport.csv
 
         - name: Log coverage percentage
           run: |
