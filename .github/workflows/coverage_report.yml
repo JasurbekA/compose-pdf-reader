@@ -38,6 +38,7 @@ jobs:
 
   report-badge:
     name: JaCoCo Badge Generator
+    needs: [ android-test ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout out the repo
