@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: 'Qodana Scan'
+      - name: 'Code Quality Scan'
         uses: JetBrains/qodana-action@v4.2.2
         with:
           linter: jetbrains/qodana-jvm:latest
