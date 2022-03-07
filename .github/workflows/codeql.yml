@@ -12,4 +12,4 @@ jobs:
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@v4.2.2
         with:
-          linter: jetbrains/qodana-kotlin
+          linter: jetbrains/qodana-kt
