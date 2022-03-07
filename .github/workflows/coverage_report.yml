@@ -33,7 +33,7 @@ jobs:
       - name: Upload Code Coverage Report
         uses: actions/upload-artifact@v2
         with:
-          name: jacoco-report.csv
+          name: combinedJacocoTestReport.csv
           path: app/build/reports/jacoco/test/combinedJacocoTestReport.csv
 
   report-badge:
@@ -46,13 +46,14 @@ jobs:
       - name: Download the file
         uses: actions/download-artifact@v2
         with:
-          name: jacoco-report.csv
+          name: combinedJacocoTestReport.csv
+          path: app/build/reports/jacoco/test
       - name: Generate JaCoCo Badge
         id: jacoco-badge
         uses: cicirello/jacoco-badge-generator@v2.6.1
         with:
           coverage-label: "Total Coverage"
-          jacoco-csv-file: jacoco-report.csv
+          jacoco-csv-file: app/build/reports/jacoco/test/combinedJacocoTestReport.csv
 
       - name: Log coverage percentage
         run: |
