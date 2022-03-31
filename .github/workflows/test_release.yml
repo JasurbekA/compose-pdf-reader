@@ -13,6 +13,7 @@ jobs:
       - name: Create Release
         run: |
          VERSION_NAME=$(grep "versionName" app/build.gradle.kts | awk '{print $3}' | tr -d  \''"\')
-         gh release create ${{ VERSION_NAME }} --generate-notes
+         gh release create ${ VERSION_NAME } --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+        
