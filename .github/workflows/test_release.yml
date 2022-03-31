@@ -69,6 +69,6 @@ jobs:
         with:
           apkPath: app/build/outputs/apk/release/app-release.apk
       - name: Create Release
-        run: gh release create ${{ apkInfo.outputs.versionNum }} --generate-notes
+        run: gh release create ${{ steps.apkInfo.outputs.versionNum }} --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
