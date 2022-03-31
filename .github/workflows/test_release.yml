@@ -4,9 +4,6 @@ on:
     branches: [ master ]
 
 jobs:
-  unit-test:
-    name: Test
-    runs-on: ubuntu-latest
 
   build:
     name: Build
