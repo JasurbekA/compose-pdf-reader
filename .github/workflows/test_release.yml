@@ -48,17 +48,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Download APK
-        uses: actions/download-artifact@v2
-        with:
-          name: app-release.apk
-          path: app/build/outputs/apk/release
-      - name: Get Apk Version
-        id: apkInfo
-        uses: JantHsueh/get-apk-info-action@1.0
-        with:
-          apkPath: app/build/outputs/apk/release/app-release.apk
       - name: Create Release
-        run: gh release create ${{ steps.apkInfo.outputs.versionNum }} --generate-notes
+        run: |
+         TAG = (grep "versionName" app/build.gradle.kts | awk '{print $3}' | tr -d  \''"\')
+         gh release create ${{ TAG }} --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
