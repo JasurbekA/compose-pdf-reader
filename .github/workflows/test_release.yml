@@ -33,22 +33,12 @@ jobs:
         run: |
           APK_NAME=$(echo app/build/outputs/apk/release/*.apk)
           echo "::set-output name=APK_NAME::${APK_NAME}"
-      - name: Get bundle name
-        id: bundle-name
-        run: |
-          BUNDLE_NAME=$(echo app/build/outputs/bundle/release/*.aab)
-          echo "::set-output name=BUNDLE_NAME::${BUNDLE_NAME}"
 
       - name: Upload App apk
         uses: actions/upload-artifact@v2
         with:
-          name: release-apk
+          name: app-release.apk
           path: ${{ steps.apk-name.outputs.APK_NAME }}
-      - name: Upload App bundle
-        uses: actions/upload-artifact@v2
-        with:
-          name: release-bundle
-          path: ${{ steps.bundle-name.outputs.BUNDLE_NAME }}
     
 
   create-github-release:
@@ -61,7 +51,7 @@ jobs:
       - name: Download APK
         uses: actions/download-artifact@v2
         with:
-          name: release-apk
+          name: app-release.apk
           path: app/build/outputs/apk/release
       - name: Get Apk Version
         id: apkInfo
