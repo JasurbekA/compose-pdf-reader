@@ -4,47 +4,9 @@ on:
     branches: [ master ]
 
 jobs:
-
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set Up JDK
-        uses: actions/setup-java@v2
-        with:
-          java-version: 11
-          distribution: 'zulu'
-          cache: gradle
-
-
-      - name: Setting up Gradle 7.0.2 and Build Project
-        uses: gradle/gradle-build-action@v2
-        env:
-          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
-        with:
-          gradle-version: 7.2
-          arguments: assembleRelease
-
-
-      - name: Get apk name
-        id: apk-name
-        run: |
-          APK_NAME=$(echo app/build/outputs/apk/release/*.apk)
-          echo "::set-output name=APK_NAME::${APK_NAME}"
-
-      - name: Upload App apk
-        uses: actions/upload-artifact@v2
-        with:
-          name: app-release.apk
-          path: ${{ steps.apk-name.outputs.APK_NAME }}
-    
-
   create-github-release:
     name: Create GitHub Release
     runs-on: ubuntu-latest
-    needs: [ build ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
