@@ -51,6 +51,7 @@ class PdfViewerFragment : DialogFragment() {
     ViewModelProvider(this)[PdfViewerViewModel::class.java]
   }
 
+  @Suppress("MagicNumber")
   private val pageDividerColor = Color(0xFFC4C4C4)
 
   override fun onStart() {
