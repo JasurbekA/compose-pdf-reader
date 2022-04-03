@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Compose PDF Reader</string>
+    <string name="open_sample_pdf">Open Sample PDF</string>
 </resources>
