@@ -15,6 +15,6 @@ ext {
             // https://developer.android.com/jetpack/androidx/releases/test
             espresso       : "3.4.0",
             // https://github.com/material-components/material-components-android/releases
-            material       : "1.4.0",
+            material       : "1.5.0",
     ]
 }
