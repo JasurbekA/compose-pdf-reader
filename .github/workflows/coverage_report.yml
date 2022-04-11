@@ -25,7 +25,7 @@ jobs:
           api-level: 29
           script: ./gradlew combinedJacocoTestReport
       - name: Upload Code Coverage Report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: combinedJacocoTestReport.csv
           path: app/build/reports/jacoco/test/combinedJacocoTestReport.csv
