@@ -38,7 +38,7 @@ jobs:
       - name: Checkout out the repo
         uses: actions/checkout@v3
       - name: Download the file
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: combinedJacocoTestReport.csv
           path: app/build/reports/jacoco/test
