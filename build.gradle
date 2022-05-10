@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext.kotlinVersion = "1.6.10"
-    ext.ktlintPluginVersion = "10.2.1"
+    ext.ktlintPluginVersion = "10.3.0"
     ext.detektVersion = "1.19.0"
     ext.jacocoAndroidVersion = "0.2"
 
