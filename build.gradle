@@ -2,7 +2,7 @@
 buildscript {
     ext.kotlinVersion = "1.6.10"
     ext.ktlintPluginVersion = "10.3.0"
-    ext.detektVersion = "1.19.0"
+    ext.detektVersion = "1.20.0"
     ext.jacocoAndroidVersion = "0.2"
 
     repositories {
