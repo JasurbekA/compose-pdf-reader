@@ -38,8 +38,8 @@ android {
         jvmTarget = JavaVersion.VERSION_11.toString()
         useIR = true
     }
-    aaptOptions {
-        noCompress "pdf"
+    androidResources {
+        noCompress 'pdf'
     }
 }
 
