@@ -44,7 +44,7 @@ jobs:
           path: app/build/reports/jacoco/test
       - name: Generate JaCoCo Badge
         id: jacoco-badge
-        uses: cicirello/jacoco-badge-generator@v2.6.1
+        uses: cicirello/jacoco-badge-generator@v2.7.0
         with:
           coverage-label: "Total Coverage"
           jacoco-csv-file: app/build/reports/jacoco/test/combinedJacocoTestReport.csv
